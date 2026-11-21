@@ -1,0 +1,221 @@
+/* === Global Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  color: #e0e0e0;
+  padding: 30px 20px;
+}
+
+/* === Header === */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #e94560;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+}
+
+/* === Button Grid === */
+.btn-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  opacity: 0.92;
+}
+
+button:active {
+  transform: translateY(0px);
+}
+
+.btn-map      { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; }
+.btn-foreach  { background: linear-gradient(135deg, #f093fb, #f5576c); color: #fff; }
+.btn-add      { background: linear-gradient(135deg, #4facfe, #00f2fe); color: #1a1a2e; }
+.btn-remove   { background: linear-gradient(135deg, #f7971e, #ffd200); color: #1a1a2e; }
+.btn-concat   { background: linear-gradient(135deg, #43e97b, #38f9d7); color: #1a1a2e; }
+.btn-reset    { background: linear-gradient(135deg, #e94560, #c0392b); color: #fff; }
+
+/* === Output Section === */
+.output-section {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.output-section h2 {
+  font-size: 1.1rem;
+  color: #a0aec0;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#output {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* === Result Label (above cards) === */
+.result-label {
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #e94560;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #cbd5e0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.result-label span.tag {
+  background: #e94560;
+  color: #fff;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* === Employee Card === */
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeInUp 0.35s ease both;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Colour accent bar per profession */
+.card.developer { border-top: 3px solid #667eea; }
+.card.admin     { border-top: 3px solid #f7971e; }
+.card.intern    { border-top: 3px solid #4facfe; }
+.card.designer  { border-top: 3px solid #f093fb; }
+.card.manager   { border-top: 3px solid #43e97b; }
+.card.tester    { border-top: 3px solid #ffd200; }
+
+.card .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.developer .avatar { background: rgba(102, 126, 234, 0.25); color: #667eea; }
+.admin     .avatar { background: rgba(247, 151, 30,  0.25); color: #f7971e; }
+.intern    .avatar { background: rgba(79, 172, 254,  0.25); color: #4facfe; }
+.designer  .avatar { background: rgba(240, 147, 251, 0.25); color: #f093fb; }
+.manager   .avatar { background: rgba(67, 233, 123,  0.25); color: #43e97b; }
+.tester    .avatar { background: rgba(255, 210, 0,   0.25); color: #ffd200; }
+
+.card .emp-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f0f4f8;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+}
+
+.card .emp-id {
+  font-size: 0.75rem;
+  color: #718096;
+  margin-bottom: 10px;
+}
+
+.card .badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+}
+
+.developer .badge { background: rgba(102,126,234,0.2); color: #667eea; }
+.admin     .badge { background: rgba(247,151,30, 0.2); color: #f7971e; }
+.intern    .badge { background: rgba(79,172,254, 0.2); color: #4facfe; }
+.designer  .badge { background: rgba(240,147,251,0.2); color: #f093fb; }
+.manager   .badge { background: rgba(67,233,123, 0.2); color: #43e97b; }
+.tester    .badge { background: rgba(255,210,0,  0.2); color: #ffd200; }
+
+.card .emp-age {
+  font-size: 0.82rem;
+  color: #a0aec0;
+}
+
+.card .emp-age span {
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* === Empty / placeholder === */
+.placeholder {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #4a5568;
+  font-size: 1rem;
+  padding: 40px;
+  border: 2px dashed rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  h1 { font-size: 1.4rem; }
+  .btn-grid { gap: 10px; }
+  button { padding: 10px 16px; font-size: 0.82rem; }
+}

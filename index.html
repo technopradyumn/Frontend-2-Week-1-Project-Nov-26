@@ -1,23 +1,31 @@
-<!-- @format -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Employee Array Functions</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <button onclick="PrintDeveloperbyMap()">
-      Console log Students with Map
-    </button>
-    <button onclick="PrintDeveloperbyForEach()">
-      Console log Students with foreach
-    </button>
-    <button onclick="addData()">Console New Data with 4th Employee</button>
-    <button onclick="removeAdmin()">Remove Admin/button>
-    <button onclick="concatenateArray()">concatenateArray</button>
+    <h1>Employee Array Functions</h1>
+    <p class="subtitle">Click a button to see the result rendered on screen</p>
+
+    <div class="btn-grid">
+      <button class="btn-map"     onclick="PrintDeveloperbyMap()">🗺️ Map — Developers</button>
+      <button class="btn-foreach" onclick="PrintDeveloperbyForEach()">🔁 ForEach — Developers</button>
+      <button class="btn-add"     onclick="addData()">➕ Add Employee</button>
+      <button class="btn-remove"  onclick="removeAdmin()">🗑️ Remove Admin</button>
+      <button class="btn-concat"  onclick="concatenateArray()">🔗 Concatenate Arrays</button>
+      <button class="btn-reset"   onclick="resetAll()">↺ Reset</button>
+    </div>
+
+    <section class="output-section">
+      <h2>Output</h2>
+      <div id="output">
+        <p class="placeholder">Click a button above to see results here ✨</p>
+      </div>
+    </section>
 
     <script src="./script.js"></script>
   </body>
